@@ -10,4 +10,5 @@
     <color name="navbar_background">#1a1a48</color>
     <color name="apricot">#FBCEB1</color>
     <color name="burnt_orange">#CC5500</color>
+    <color name="dialog_button_color">#26C6DA</color>
 </resources>
