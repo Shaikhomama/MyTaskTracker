@@ -11,4 +11,9 @@
     <color name="apricot">#FBCEB1</color>
     <color name="burnt_orange">#CC5500</color>
     <color name="dialog_button_color">#26C6DA</color>
+    <color name="buttons">#685044</color>
+    <color name="toolbar">#e9afa3</color>
+    <color name="background">#f9dec9</color>
+    <color name="note_background">#aec5eb</color>
+    <color name="note_text">#3a405a</color>
 </resources>
