@@ -7,6 +7,7 @@ public class Task {
     private int taskID;
     private String subject;
     private String description;
+    private Calendar dueDate;
 
     public Task() {
         taskID = -1;
@@ -36,4 +37,13 @@ public class Task {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public Calendar getDueDate() {
+        return dueDate;
+    }
+
+    public void setDueDate(Calendar dueDate) {
+        this.dueDate = dueDate;
+    }
+
 }
