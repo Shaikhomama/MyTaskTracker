@@ -1,10 +1,17 @@
 package com.example.mytaskstracker;
 
+import java.util.Calendar;
+
 public class Task {
 
     private int taskID;
     private String subject;
     private String description;
+
+    public Task() {
+        taskID = -1;
+
+    }
 
     public int getTaskID() {
         return taskID;
