@@ -24,7 +24,7 @@ public class TaskSettingsActivity extends AppCompatActivity {
     }
 
     private void initListButton(){                                   //connects to ContactListActivity
-        ImageButton ibList = findViewById(R.id.imageButtonList);
+        ImageButton ibList = findViewById(R.id.notesButton);
         ibList.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view){
                 Intent intent = new Intent(TaskSettingsActivity.this, TasksListActivity.class);
@@ -35,7 +35,7 @@ public class TaskSettingsActivity extends AppCompatActivity {
     }
 
     private void initSettingsButton(){                              //connects to ContactSettingsActivity
-        ImageButton ibSettings = findViewById(R.id.imageButtonSettings);
+        ImageButton ibSettings = findViewById(R.id.settingsButton);
         ibSettings.setEnabled(false);
     }
 
