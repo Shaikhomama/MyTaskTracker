@@ -119,7 +119,9 @@
                 android:ems="10"
 
                 android:hint="enter subject"
+                android:imeOptions="actionNext"
                 android:inputType="textPersonName"
+                android:nextFocusDown="@id/editTextDescription"
                 android:shadowColor="@color/buttons"
                 android:textColor="@color/buttons"
                 android:textColorHint="@color/buttons"
