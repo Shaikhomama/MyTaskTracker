@@ -18,7 +18,6 @@ public class TaskDataSource {
     private SQLiteDatabase database;
     private TaskDBHelper dbHelper;
 
-
     public TaskDataSource(Context context) {
 
         dbHelper = new TaskDBHelper(context);
