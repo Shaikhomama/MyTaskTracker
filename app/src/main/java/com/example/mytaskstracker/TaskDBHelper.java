@@ -24,6 +24,11 @@ public class TaskDBHelper extends SQLiteOpenHelper {
 
         @Override
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+                try{
+                        db.execSQL("ALTER TABLE contact ADD COLUMN taskduedate text");
+                }
+                catch(Exception ex){
 
+                }
         }
 }
