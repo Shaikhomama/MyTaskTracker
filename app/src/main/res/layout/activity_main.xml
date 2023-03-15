@@ -59,7 +59,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:backgroundTint="#00FFFFFF"
-            app:srcCompat="@drawable/notes_brown" />
+            app:srcCompat="@drawable/notes_brown"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <ImageButton
             android:id="@+id/settingsButton"
@@ -67,7 +68,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:backgroundTint="#00FFFFFF"
-            app:srcCompat="@drawable/settings_brown" />
+            app:srcCompat="@drawable/settings_brown"
+            tools:ignore="SpeakableTextPresentCheck" />
 
     </LinearLayout>
 
