@@ -11,7 +11,7 @@ public class Task {
 
     public Task() {
         taskID = -1;
-
+        dueDate = Calendar.getInstance();
     }
 
     public int getTaskID() {

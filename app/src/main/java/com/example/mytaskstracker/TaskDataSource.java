@@ -60,12 +60,12 @@ public class TaskDataSource {
             Long rowId = (long) t.getTaskID();
             ContentValues updateValues = new ContentValues();
 
-            updateValues.put("tasksubject", t.getTaskID());
+            updateValues.put("tasksubject", t.getSubject());
             updateValues.put("taskdescription", t.getDescription());
             updateValues.put("taskduedate", String.valueOf(t.getDueDate().getTimeInMillis()));
 
 
-            didSucceed = database.update("task", updateValues, "_id =" + rowId, null) > 0;
+            didSucceed = database.update("task", updateValues, "_id=" + rowId, null) > 0;
         } catch (Exception e) {
             //do nothing -will return false if there is an exception
         }
