@@ -18,9 +18,8 @@ import java.util.ArrayList;
 
 public class TasksListActivity extends AppCompatActivity {
     RecyclerView taskList;
-    TaskAdapter taskAdapter;
-
     ArrayList<Task> tasks;
+    TaskAdapter taskAdapter = new TaskAdapter(tasks);
 
     private View.OnClickListener onItemClickListener = new View.OnClickListener() {
         @Override
@@ -46,6 +45,7 @@ public class TasksListActivity extends AppCompatActivity {
         initSettingsButton();
         initAddTaskButton();
         initDeleteSwitch();
+        TaskAdapter.setOnItemClickListener(onItemClickListener);
      }
 
      @Override
@@ -67,13 +67,14 @@ public class TasksListActivity extends AppCompatActivity {
                 RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
                 taskList.setLayoutManager(layoutManager);
                 taskAdapter = new TaskAdapter(tasks, this);
+                taskAdapter.setOnItemClickListener(onItemClickListener);
                 taskList.setAdapter(taskAdapter);
             } else {
                 Intent intent = new Intent(TasksListActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         } catch (Exception e) {
-            Toast.makeText(this, "Error retrieving", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Error retrieving tasks", Toast.LENGTH_LONG).show();
         }
     }
 

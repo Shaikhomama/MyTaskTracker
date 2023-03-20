@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class TaskAdapter extends RecyclerView.Adapter {
     private ArrayList<Task> taskData;
-    private View.OnClickListener mOnItemClickListener;
+    private static View.OnClickListener mOnItemClickListener;
     private Boolean isDeleting;
     private Context parentTask;
 
@@ -39,12 +39,16 @@ public class TaskAdapter extends RecyclerView.Adapter {
         }
     }
 
+    public TaskAdapter(ArrayList<Task> arrayList){
+        taskData = arrayList;
+    }
+
     public TaskAdapter(ArrayList<Task> arrayList, Context context) {
         taskData = arrayList;
         parentTask = context;
     }
 
-    public void setOnItemClickListener(View.OnClickListener itemClickListener) {
+    public static void setOnItemClickListener(View.OnClickListener itemClickListener) {
         mOnItemClickListener = itemClickListener;
     }
 
