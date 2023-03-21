@@ -53,7 +53,7 @@ public class TasksListActivity extends AppCompatActivity {
         super.onResume();
 
         String sortBy = getSharedPreferences("MyTasksTrackerPreferences", Context.MODE_PRIVATE)
-                .getString("sortfield","taskduedate");
+                .getString("sortfield","duedate");
         String sortOrder = getSharedPreferences("MyTasksTrackerPreferences", Context.MODE_PRIVATE)
                 .getString("sortorder","ASC");
 

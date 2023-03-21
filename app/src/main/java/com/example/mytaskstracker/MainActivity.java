@@ -2,7 +2,6 @@ package com.example.mytaskstracker;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
-import com.example.mytaskstracker.TaskDataSource;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
