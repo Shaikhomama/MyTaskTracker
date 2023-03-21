@@ -42,7 +42,7 @@ public class TaskSettingsActivity extends AppCompatActivity {
 
     private void initSettings(){
         String sortBy = getSharedPreferences("MyTasksTrackerPreferences",
-                Context.MODE_PRIVATE).getString("sortfield","duedate");
+                Context.MODE_PRIVATE).getString("sortfield","taskduedate");
         String sortOrder = getSharedPreferences("MyTasksTrackerPreferences",
                 Context.MODE_PRIVATE).getString("sortorder","ASC");
 
@@ -81,7 +81,7 @@ public class TaskSettingsActivity extends AppCompatActivity {
                 }
                 else{
                     getSharedPreferences("MyTasksTrackerPreferences",
-                            Context.MODE_PRIVATE).edit().putString("sortfield", "duedate").apply();
+                            Context.MODE_PRIVATE).edit().putString("sortfield", "taskduedate").apply();
                 }
             }
         });

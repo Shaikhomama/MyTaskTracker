@@ -15,10 +15,10 @@
             android:name=".TaskSettingsActivity"
             android:exported="false" />
         <activity
-            android:name=".TasksListActivity"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".TasksListActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

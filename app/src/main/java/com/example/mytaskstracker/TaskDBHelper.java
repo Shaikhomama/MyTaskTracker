@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class TaskDBHelper extends SQLiteOpenHelper {
 
         private static final String DATABASE_NAME = "mytasks.db";
-        private static final int DATABASE_VERSION = 3;
+        private static final int DATABASE_VERSION = 4;
 
         private static final String CREATE_TABLE_TASK =
                 "create table task (_id integer primary key autoincrement, "
