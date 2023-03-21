@@ -59,8 +59,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:backgroundTint="#00FFFFFF"
-            app:srcCompat="@drawable/notes_brown"
-            tools:ignore="SpeakableTextPresentCheck" />
+            app:srcCompat="@drawable/notes_brown" />
 
         <ImageButton
             android:id="@+id/settingsButton"
@@ -68,8 +67,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:backgroundTint="#00FFFFFF"
-            app:srcCompat="@drawable/settings_brown"
-            tools:ignore="SpeakableTextPresentCheck" />
+            app:srcCompat="@drawable/settings_brown" />
 
     </LinearLayout>
 
@@ -105,7 +103,7 @@
                 android:layout_marginTop="50dp"
                 android:fontFamily="cursive"
                 android:text="Task"
-                android:textColor="@color/buttons"
+                android:textColor="#000000"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -117,16 +115,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:backgroundTint="@color/buttons"
                 android:ems="10"
-
                 android:hint="enter subject"
-                android:imeOptions="actionNext"
+
                 android:inputType="textPersonName"
-                android:nextFocusDown="@id/editTextDescription"
-                android:shadowColor="@color/buttons"
-                android:textColor="@color/buttons"
-                android:textColorHint="@color/buttons"
+                android:textColor="#000000"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textTask"
                 tools:ignore="TouchTargetSizeCheck" />
@@ -139,7 +132,7 @@
                 android:layout_marginTop="24dp"
                 android:fontFamily="cursive"
                 android:text="Description:"
-                android:textColor="@color/buttons"
+                android:textColor="#000000"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -151,15 +144,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:backgroundTint="@color/buttons"
                 android:ems="10"
                 android:hint="enter discription"
                 android:inputType="textCapSentences"
-                android:shadowColor="@color/buttons"
-                android:textColor="@color/buttons"
-                android:textColorHighlight="@color/buttons"
-                android:textColorHint="@color/buttons"
-                android:textColorLink="@color/buttons"
+                android:textColor="#000000"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView2"
                 tools:ignore="TouchTargetSizeCheck" />
@@ -171,7 +159,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:text="Due Date:"
-                android:textColor="@color/buttons"
+                android:textColor="#000000"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/editTextDescription" />
 
@@ -182,7 +170,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:text="01/01/1970"
-                android:textColor="@color/buttons"
+                android:textColor="#000000"
                 app:layout_constraintStart_toEndOf="@+id/textDate"
                 app:layout_constraintTop_toBottomOf="@+id/editTextDescription" />
 
@@ -191,10 +179,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
-                android:backgroundTint="@color/buttons"
                 android:text="Change Date"
                 app:layout_constraintStart_toEndOf="@+id/textDueDate"
-                app:layout_constraintTop_toBottomOf="@+id/editTextDescription" />
+                app:layout_constraintTop_toBottomOf="@+id/editTextDescription"
+                android:backgroundTint="@color/buttons"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
