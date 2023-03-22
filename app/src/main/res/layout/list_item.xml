@@ -49,7 +49,7 @@
         tools:ignore="TextSizeCheck" />
 
     <Button
-        android:id="@+id/buttonDeleteTask"
+        android:id="@+id/deleteButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
