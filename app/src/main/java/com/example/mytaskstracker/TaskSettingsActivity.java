@@ -24,10 +24,10 @@ public class TaskSettingsActivity extends AppCompatActivity {
         initSortOrderClick();
     }
 
-    private void initListButton(){                                   //connects to ContactListActivity
+    private void initListButton() {
         ImageButton ibList = findViewById(R.id.notesButton);
         ibList.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view){
+            public void onClick(View view) {
                 Intent intent = new Intent(TaskSettingsActivity.this, TasksListActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
@@ -35,77 +35,83 @@ public class TaskSettingsActivity extends AppCompatActivity {
         });
     }
 
-    private void initSettingsButton(){                              //connects to ContactSettingsActivity
+    private void initSettingsButton() {
         ImageButton ibSettings = findViewById(R.id.settingsButton);
         ibSettings.setEnabled(false);
     }
 
 
-    private void initSettings(){
-        String sortBy = getSharedPreferences("MyTasksTrackerPreferences",
-                Context.MODE_PRIVATE).getString("sortfield","date");
-        String sortOrder = getSharedPreferences("MyTasksTrackerPreferences",
-                Context.MODE_PRIVATE).getString("sortorder","ASC");
+    private void initSettings() {
 
-        RadioButton rbPriority = findViewById(R.id.radioPriority);
-        RadioButton rbDate = findViewById(R.id.radioDate);
+        String sortBy = getSharedPreferences("MyTaskListPreferences",
+                Context.MODE_PRIVATE).getString("sortfield", "tasksubject");
+        String sortOrder = getSharedPreferences("MyTaskListPreferences",
+                Context.MODE_PRIVATE).getString("sortorder", "ASC");
 
-        if (sortBy.equalsIgnoreCase("priority")){
-            rbPriority.setChecked(true);
+        RadioButton rbTitle = findViewById(R.id.radioTitle);
+        RadioButton rbDueDate = findViewById(R.id.radioDate);
+
+        if (sortBy.equalsIgnoreCase("tasksubject")) {
+            rbTitle.setChecked(true);
+        } else {
+            rbDueDate.setChecked(true);
         }
-        else{
-            rbDate.setChecked(true);
-        }
+
 
         RadioButton rbAscending = findViewById(R.id.radioAscending);
         RadioButton rbDescending = findViewById(R.id.radioDescending);
 
-        if(sortOrder.equalsIgnoreCase("ASC")) {
+        if (sortOrder.equalsIgnoreCase("ASC")) {
             rbAscending.setChecked(true);
-        }
-        else {
+        } else {
             rbDescending.setChecked(true);
         }
     }
 
-    private void initSortByClick(){
+    private void initSortByClick() {
+
         RadioGroup rgSortBy = findViewById(R.id.radioGroupSortBy);
         rgSortBy.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                RadioButton rbPriority = findViewById(R.id.radioPriority);
-                RadioButton rbDate = findViewById(R.id.radioDate);
 
-                if (rbPriority.isChecked()){
-                    getSharedPreferences("MyTasksTrackerPreferences",
-                            Context.MODE_PRIVATE).edit().putString("sortfield","priority").apply();
-                }
-                else if(rbDate.isChecked()){
-                    getSharedPreferences("MyTasksTrackerPreferences",
-                            Context.MODE_PRIVATE).edit().putString("sortfield", "date").apply();
+                RadioButton rbTitle = findViewById(R.id.radioTitle);
+
+                if (rbTitle.isChecked()) {
+                    getSharedPreferences("MyTaskListPreferences",
+                            Context.MODE_PRIVATE).edit()
+                            .putString("sortfield", "tasksubject").apply();
+                } else {
+                    getSharedPreferences("MyTaskListPreferences",
+                            Context.MODE_PRIVATE).edit()
+                            .putString("sortfield", "taskduedate").apply();
                 }
             }
         });
     }
 
-    private void initSortOrderClick(){
+    private void initSortOrderClick() {
         RadioGroup rgSortOrder = findViewById(R.id.radioGroupSortOrder);
         rgSortOrder.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
+
                 RadioButton rbAscending = findViewById(R.id.radioAscending);
-                if(rbAscending.isChecked()) {
-                    getSharedPreferences("MyTasksTrackerPreferences",
+
+                if (rbAscending.isChecked()) {
+
+                    getSharedPreferences("MyTaskListPreferences",
                             Context.MODE_PRIVATE).edit()
                             .putString("sortorder", "ASC").apply();
                 }
                 else {
-                    getSharedPreferences("MyTasksTrackerPreferences",
+                    getSharedPreferences("MyTaskListPreferences",
                             Context.MODE_PRIVATE).edit()
                             .putString("sortorder", "DESC").apply();
                 }
             }
         });
     }
-
 }

@@ -55,10 +55,10 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" >
 
         <RadioButton
-            android:id="@+id/radioPriority"
+            android:id="@+id/radioTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Priority Level" />
+            android:text="Title" />
 
         <RadioButton
             android:id="@+id/radioDate"

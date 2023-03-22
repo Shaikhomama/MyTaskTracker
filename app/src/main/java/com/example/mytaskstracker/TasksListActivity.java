@@ -50,7 +50,7 @@ public class TasksListActivity extends AppCompatActivity {
         TaskAdapter.setOnItemClickListener(onItemClickListener);
 
         String sortBy = getSharedPreferences("MyTaskListPreferences",
-                Context.MODE_PRIVATE).getString("sortfield", "date");
+                Context.MODE_PRIVATE).getString("sortfield", "tasksubject");
         String sortOrder = getSharedPreferences("MyTaskListPreferences",
                 Context.MODE_PRIVATE).getString("sortorder", "ASC");
 
@@ -99,7 +99,7 @@ public class TasksListActivity extends AppCompatActivity {
         super.onResume();
 
         String sortBy = getSharedPreferences("MyTaskListPreferences",
-                Context.MODE_PRIVATE).getString("sortfield", "date");
+                Context.MODE_PRIVATE).getString("sortfield", "tasksubject");
         String sortOrder = getSharedPreferences("MyTaskListPreferences",
                 Context.MODE_PRIVATE).getString("sortorder", "ASC");
 
