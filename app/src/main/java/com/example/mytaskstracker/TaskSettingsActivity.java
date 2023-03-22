@@ -49,12 +49,12 @@ public class TaskSettingsActivity extends AppCompatActivity {
                 Context.MODE_PRIVATE).getString("sortorder", "ASC");
 
         RadioButton rbTitle = findViewById(R.id.radioTitle);
-        RadioButton rbDueDate = findViewById(R.id.radioDate);
+        RadioButton rbDescription = findViewById(R.id.radioDescription);
 
         if (sortBy.equalsIgnoreCase("tasksubject")) {
             rbTitle.setChecked(true);
         } else {
-            rbDueDate.setChecked(true);
+            rbDescription.setChecked(true);
         }
 
 
@@ -85,7 +85,7 @@ public class TaskSettingsActivity extends AppCompatActivity {
                 } else {
                     getSharedPreferences("MyTaskListPreferences",
                             Context.MODE_PRIVATE).edit()
-                            .putString("sortfield", "taskduedate").apply();
+                            .putString("sortfield", "taskdescription").apply();
                 }
             }
         });
