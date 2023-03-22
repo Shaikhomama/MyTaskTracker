@@ -39,20 +39,7 @@ public class TaskSettingsActivity extends AppCompatActivity {
         ImageButton ibSettings = findViewById(R.id.settingsButton);
         ibSettings.setEnabled(false);
     }
-/*
-    private void initSettings(){
-        String sortBy = getSharedPreferences("MySortTaskPreferences",
-                Context.MODE_PRIVATE).getString("sortfield","tasksubject");
-        String sortOrder = getSharedPreferences("MySortTaskPreferences",
-                Context.MODE_PRIVATE).getString("sortorder","ASC");
 
-        RadioButton rbDate = findViewById(R.id.radioDate);
-        if (sortBy.equalsIgnoreCase("duedate")){
-            rbDate.setChecked(true);
-        }
-
-    }
-*/
 
     private void initSettings(){
         String sortBy = getSharedPreferences("MyTasksTrackerPreferences",

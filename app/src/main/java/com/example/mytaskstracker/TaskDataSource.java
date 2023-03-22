@@ -45,6 +45,7 @@ public class TaskDataSource {
 
             initialValues.put("tasksubject", t.getSubject());
             initialValues.put("taskdescription", t.getDescription());
+            initialValues.put("taskduedate", String.valueOf(t.getDueDate().getTimeInMillis()));
 
             didSucceed = database.insert("task", null, initialValues) > 0;
         } catch (Exception e) {
@@ -62,6 +63,7 @@ public class TaskDataSource {
 
             updateValues.put("tasksubject", t.getTaskID());
             updateValues.put("taskdescription", t.getDescription());
+            updateValues.put("taskduedate", String.valueOf(t.getDueDate().getTimeInMillis()));
 
 
             didSucceed = database.update("task", updateValues, "_id =" + rowId, null) > 0;
@@ -121,6 +123,9 @@ public class TaskDataSource {
                 newTask.setTaskID(cursor.getInt(0));
                 newTask.setSubject(cursor.getString(1));
                 newTask.setDescription(cursor.getString(2));
+                Calendar calendar = Calendar.getInstance();
+                calendar.setTimeInMillis(Long.valueOf(cursor.getString(3)));
+                newTask.setDueDate(calendar);
                 tasks.add(newTask);
                 cursor.moveToNext();
             }
@@ -142,7 +147,9 @@ public class TaskDataSource {
             task.setTaskID(cursor.getInt(0));
             task.setSubject(cursor.getString(1));
             task.setDescription(cursor.getString(2));
-
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTimeInMillis(Long.valueOf(cursor.getString(3)));
+            task.setDueDate(calendar);
             cursor.close();
         }
         return task;

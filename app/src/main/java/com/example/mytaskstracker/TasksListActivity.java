@@ -97,10 +97,12 @@ public class TasksListActivity extends AppCompatActivity {
     @Override
     public void onResume() {
         super.onResume();
+
         String sortBy = getSharedPreferences("MyTaskListPreferences",
                 Context.MODE_PRIVATE).getString("sortfield", "date");
         String sortOrder = getSharedPreferences("MyTaskListPreferences",
                 Context.MODE_PRIVATE).getString("sortorder", "ASC");
+
         TaskDataSource ds = new TaskDataSource(this);
         try{
             ds.open();
