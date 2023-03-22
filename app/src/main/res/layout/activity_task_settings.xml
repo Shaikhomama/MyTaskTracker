@@ -64,7 +64,7 @@
             android:id="@+id/radioDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Due Date" />
+            android:text="Date" />
     </RadioGroup>
     <TextView
         android:id="@+id/textView2"

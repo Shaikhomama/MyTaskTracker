@@ -39,10 +39,24 @@ public class TaskSettingsActivity extends AppCompatActivity {
         ImageButton ibSettings = findViewById(R.id.settingsButton);
         ibSettings.setEnabled(false);
     }
+/*
+    private void initSettings(){
+        String sortBy = getSharedPreferences("MySortTaskPreferences",
+                Context.MODE_PRIVATE).getString("sortfield","tasksubject");
+        String sortOrder = getSharedPreferences("MySortTaskPreferences",
+                Context.MODE_PRIVATE).getString("sortorder","ASC");
+
+        RadioButton rbDate = findViewById(R.id.radioDate);
+        if (sortBy.equalsIgnoreCase("duedate")){
+            rbDate.setChecked(true);
+        }
+
+    }
+*/
 
     private void initSettings(){
         String sortBy = getSharedPreferences("MyTasksTrackerPreferences",
-                Context.MODE_PRIVATE).getString("sortfield","taskduedate");
+                Context.MODE_PRIVATE).getString("sortfield","date");
         String sortOrder = getSharedPreferences("MyTasksTrackerPreferences",
                 Context.MODE_PRIVATE).getString("sortorder","ASC");
 
@@ -79,9 +93,9 @@ public class TaskSettingsActivity extends AppCompatActivity {
                     getSharedPreferences("MyTasksTrackerPreferences",
                             Context.MODE_PRIVATE).edit().putString("sortfield","priority").apply();
                 }
-                else{
+                else if(rbDate.isChecked()){
                     getSharedPreferences("MyTasksTrackerPreferences",
-                            Context.MODE_PRIVATE).edit().putString("sortfield", "taskduedate").apply();
+                            Context.MODE_PRIVATE).edit().putString("sortfield", "date").apply();
                 }
             }
         });
@@ -106,4 +120,5 @@ public class TaskSettingsActivity extends AppCompatActivity {
             }
         });
     }
+
 }

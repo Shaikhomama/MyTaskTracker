@@ -48,8 +48,9 @@ public class TasksListActivity extends AppCompatActivity {
         initAddTaskButton();
         initDeleteSwitch();
         TaskAdapter.setOnItemClickListener(onItemClickListener);
+
         String sortBy = getSharedPreferences("MyTaskListPreferences",
-                Context.MODE_PRIVATE).getString("sortfield", "taskname");
+                Context.MODE_PRIVATE).getString("sortfield", "date");
         String sortOrder = getSharedPreferences("MyTaskListPreferences",
                 Context.MODE_PRIVATE).getString("sortorder", "ASC");
 
@@ -59,6 +60,7 @@ public class TasksListActivity extends AppCompatActivity {
         try {
             ds.open();
             tasks = ds.getTasks(sortBy, sortOrder);
+
             ds.close();
 
             RecyclerView taskList = findViewById(R.id.rvTasks);
@@ -96,7 +98,7 @@ public class TasksListActivity extends AppCompatActivity {
     public void onResume() {
         super.onResume();
         String sortBy = getSharedPreferences("MyTaskListPreferences",
-                Context.MODE_PRIVATE).getString("sortfield", "taskname");
+                Context.MODE_PRIVATE).getString("sortfield", "date");
         String sortOrder = getSharedPreferences("MyTaskListPreferences",
                 Context.MODE_PRIVATE).getString("sortorder", "ASC");
         TaskDataSource ds = new TaskDataSource(this);
